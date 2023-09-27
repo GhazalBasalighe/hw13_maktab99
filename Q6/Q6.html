@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/eb23fca95b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <style>
+            .custom-btn {
+                border: 5px solid white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container mt-5 ">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="card text-center">
+                        <div class="card-body bg-info rounded-3">
+                            <h1 class="h6">Create a Login button in an HTML file.<br> Then with JQuery, change the
+                                button to
+                                Log out
+                                and also change the style accordingly.</h1>
+                            <button class="btn btn-success mt-3 custom-btn rounded-5 py-2 px-4">
+                                <i class="fa-solid fa-lock me-2"></i>
+                                <span>Login</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JQUERY CODE BELOW -->
+        <script>
+            $(document).ready(() => {
+                const button = $(".custom-btn");
+                const buttonText = button.find("span");
+                const buttonIcon = button.find("i");
+
+                button.on("click", () => {
+                    button.toggleClass("btn-success btn-danger");
+                    buttonText.text(buttonText.text() === "Login" ? "Logout" : "Login");
+                    buttonIcon.toggleClass("fa-lock fa-lock-open");
+                });
+            });
+            // $(document).ready(() => {
+            //     const button = $(".custom-btn");
+            //     button.on("click", () => {
+            //         const buttonText = button.find("span");
+            //         const buttonIcon = button.find("i");
+            //         //check button state
+            //         if (buttonText.text() === "Login") {
+            //             button.removeClass("btn-success").addClass("btn-danger");
+            //             buttonIcon.removeClass("fa-lock");
+            //             buttonIcon.addClass("fa-lock-open");
+            //             buttonText.text("Logout");
+            //         } else {
+            //             button.removeClass("btn-danger").addClass("btn-success");
+            //             buttonIcon.addClass("fa-lock");
+            //             buttonIcon.removeClass("fa-lock-open");
+            //             buttonText.text("Login");
+            //         }
+            //     });
+            // })
+        </script>
+    </body>
+
+</html>
