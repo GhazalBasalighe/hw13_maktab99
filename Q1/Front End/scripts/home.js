@@ -1,4 +1,5 @@
 import { getJSON, updateJSON } from "./requests.js";
+import showToast from "./toastify.js";
 
 const formElem = document.querySelector("#task-form");
 const btnCancel = document.querySelector(".btnCancel");
@@ -13,7 +14,7 @@ let editMode = false;
 (async function editPageSettings() {
   const urlParams = new URLSearchParams(window.location.search);
   // Check if the URL contains the 'taskId' query parameter
-  const taskId = +urlParams.get("id");
+  const taskId = urlParams.has("id") ? +urlParams.get("id") : null;
   if (taskId) {
     editMode = true;
 
@@ -89,21 +90,3 @@ btnCancel.addEventListener(
   "click",
   () => (window.location.href = "../htmlContent/Todos.html")
 );
-
-//------------TOASTIFY-------------
-function showToast(bgColor, text) {
-  Toastify({
-    text: text,
-    style: {
-      background: bgColor,
-    },
-    offset: {
-      y: 40, // Vertical axis - can be a number or a string indicating unity. eg: '2em'
-    },
-    gravity: "top", // `top` or `bottom`
-    position: "center", // `left`, `center` or `right`
-    stopOnFocus: true, // Prevents dismissing of toast on hover
-    duration: 3000,
-    className: "toast-animated-border", // Add the CSS class for the animated border
-  }).showToast();
-}
