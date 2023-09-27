@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Determine when the user presses the Enter key with JQuery and count
+            the number of times the key is pressed.</h1>
+
+        <h3>The Enter Key has been pressed :</h3>
+        <span id="counter">0</span> times
+
+        <!-- JQUERY CODE BELOW -->
+        <script>
+            $(document).ready(() => {
+                let counter = 0;
+                $(document).on("keydown", (e) => {
+                    if (e.keyCode == "13") {
+                        counter++;
+                        $("#counter").html(counter);
+                        //or $("#counter").text(counter);
+                        //html() is used to return or change the html and text content of an element.
+                        //text() can only return or change the text content of an element.
+                    }
+                });
+            })
+        </script>
+    </body>
+
+</html>
