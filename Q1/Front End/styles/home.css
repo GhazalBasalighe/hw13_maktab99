@@ -1,0 +1,195 @@
+@import url("./import.css");
+
+body
+{
+    background-color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+}
+
+/* -----------------HEADER SECTION----------------- */
+header
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+header span
+{
+    color: var(--blue);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* -----------------MAIN SECTION----------------- */
+main,
+form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main
+{
+    height: 70vh;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+main > div
+{
+    align-self: center;
+}
+
+/* -----------------FORM SECTION----------------- */
+form
+{
+    gap: 1.5rem;
+}
+
+.form-section
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-section input
+{
+    background-color: transparent;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+.form-section input::placeholder
+{
+    font-family: "Montserrat", sans-serif;
+}
+
+/* -----------------BUTTON SECTION----------------- */
+.buttons
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons button
+{
+    outline: none;
+    border: none;
+    color: var(--white);
+    border-radius: 20px;
+    padding: 10px 35px;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+}
+
+.buttons button[type="submit"]
+{
+    background-color: var(--blue);
+}
+
+.buttons button[type="reset"]
+{
+    background-color: #FF0000;
+}
+
+/* -----------------TOAST ANIMATION SECTION----------------- */
+@keyframes pulse
+{
+    0%
+    {
+        border-color: #b2b2b2;
+    }
+
+    50%
+    {
+        border-color: #ccc;
+    }
+
+    100%
+    {
+        border-color: #b2b2b2;
+    }
+}
+
+.toastify.toast-animated-border
+{
+    animation: pulse 2s infinite;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+@keyframes input-focus-animation
+{
+    0%
+    {
+        border-color: #ccc;
+    }
+
+    50%
+    {
+        border-color: #00b09b;
+    }
+
+    100%
+    {
+        border-color: #ccc;
+    }
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus
+{
+    animation: input-focus-animation 0.3s ease-in-out;
+}
+
+/* -----------------BREAKPOINT SECTION----------------- */
+@media (min-width:700px)
+{
+    .container
+    {
+        margin: 0 auto;
+        width: 700px;
+        margin-top: 2rem;
+        padding: 1rem;
+
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.3px);
+        -webkit-backdrop-filter: blur(9.3px);
+        border: 1px solid rgba(255, 255, 255, 0.46);
+    }
+
+    .form-section
+    {
+        gap: 1rem;
+    }
+
+    .form-section input
+    {
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.655);
+    }
+
+    body
+    {
+        background: rgb(238, 238, 238);
+        background: linear-gradient(90deg, rgba(238, 238, 238, 1) 0%, rgba(26, 184, 219, 1) 100%);
+    }
+
+    .buttons button
+    {
+        padding: 15px 80px;
+    }
+}

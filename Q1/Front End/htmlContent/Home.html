@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="shortcut icon" href="../images/Logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="../styles/home.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script type="module" src="../scripts/requests.js"></script>
+        <script type="module" src="../scripts/toastify.js"></script>
+        <script defer type="module" src="../scripts/home.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <span class="add-task-title">Add Task</span>
+                <a href="./Landing Page.html"><img src="../images/icon x.png" alt="close button"></a>
+            </header>
+            <main>
+                <div><img src="../images/Logo.png" alt="logo"></div>
+                <form id="task-form">
+                    <div class="form-section">
+                        <label for="title">Title *</label>
+                        <input type="text" name="title" id="title" required placeholder="Enter Task Title">
+                    </div>
+                    <div class="form-section">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" placeholder="Enter Task Description">
+                    </div>
+                    <div class="form-section">
+                        <label for="dueDate">Due Date *</label>
+                        <input type="date" name="dueDate" id="dueDate" required>
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" class="btnAdd">Add</button>
+                        <button type="reset" class="btnCancel">Cancel</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    </body>
+
+</html>
