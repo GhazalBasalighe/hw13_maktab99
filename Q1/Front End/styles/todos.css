@@ -1,0 +1,402 @@
+@import url("./import.css");
+
+body
+{
+    font-family: "Montserrat", sans-serif;
+}
+
+/* -----------------HEADER SECTION----------------- */
+header
+{
+    width: 100%;
+}
+
+.top-black
+{
+    background-color: var(--black);
+    height: 3rem;
+}
+
+.top-black img
+{
+    position: absolute;
+    top: 2%;
+    left: 40%;
+    width: 4rem;
+    height: 4rem;
+}
+
+/* -----------------GRID SECTION----------------- */
+.grid-container
+{
+    display: grid;
+    margin: 4rem 1rem;
+    gap: 1.5rem;
+}
+
+.grid-item
+{
+    background-color: var(--gray);
+    border-radius: 10px;
+    padding: 10px;
+    transition: text-decoration 0.3s, color 0.3s;
+}
+
+.grid-item img
+{
+    display: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.grid-item img:hover
+{
+    transform: scale(1.2);
+}
+
+.grid-item:hover
+{
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    background-color: #B3DFFF;
+}
+
+.grid-item:hover img
+{
+    display: block;
+}
+
+.first-line,
+.task-controls,
+.info
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-controls
+{
+    gap: 5px;
+}
+
+.first-line
+{
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.info
+{
+    gap: 5px;
+}
+
+.info p
+{
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.info h6
+{
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* -----------------FOOTER SECTION----------------- */
+.bottom-gray
+{
+    background: var(--gray);
+    height: 4rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+
+}
+
+.bottom-gray img
+{
+    cursor: pointer;
+    position: fixed;
+    bottom: 10%;
+    width: 3rem;
+    height: 3rem;
+    bottom: 4%;
+    left: 42%;
+    -webkit-box-shadow: 9px 91px 43px -62px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 91px 43px -62px rgba(0, 0, 0, 0.75);
+    box-shadow: 9px 91px 43px -62px rgba(0, 0, 0, 0.75);
+}
+
+.bottom-gray img:hover
+{
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+/* PAGINATION STYLES */
+.page-number
+{
+    padding: 5px;
+    margin: 5px;
+    z-index: 10;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+/*active current page class*/
+.active-page
+{
+    background-color: var(--blue);
+    color: var(--white);
+    transition: all 0.3s ease-in-out;
+}
+
+/*PAGINATION LIST*/
+.page-list
+{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+}
+
+/* -----------------MODAL SECTION----------------- */
+.modal
+{
+    position: fixed;
+    background-color: var(--gray);
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    z-index: 10;
+    padding: 0.5rem;
+    top: 15rem;
+    left: 5%;
+    right: 5%;
+    display: none;
+
+}
+
+.modal-header
+{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal-header img
+{
+    width: 2rem;
+}
+
+.modal-title
+{
+    font-size: 1.5rem;
+}
+
+.modal-content
+{
+    border: 2px solid var(--gray);
+    margin: 0.2rem 0;
+    padding: 0.8rem;
+    -webkit-box-shadow: 0px 0px 41px -26px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 41px -26px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 41px -26px rgba(0, 0, 0, 0.75);
+}
+
+.modal-info
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.modal-buttons
+{
+    align-self: center;
+}
+
+.modal button
+{
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+#cancelDeleteBtn
+{
+    background-color: rgba(255, 0, 0, 0.799);
+}
+
+#cancelDeleteBtn:hover
+{
+    background-color: rgba(249, 34, 34, 0.799);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#confirmDeleteBtn:hover
+{
+    background-color: #24aecd;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* overlay for showing the modal */
+.overlay
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    z-index: 9;
+    /* Behind the modal */
+    display: none;
+}
+
+/* ANIMATION FOR MODAL BORDER DURING APPEAREANCE */
+@keyframes pulse
+{
+    0%
+    {
+        border-color: var(--gray);
+    }
+
+    50%
+    {
+        border-color: var(--blue);
+    }
+
+    100%
+    {
+        border-color: var(--gray);
+    }
+}
+
+.animated-border
+{
+    animation: pulse 2s infinite;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* -----------------BREAKPOINT SECTION----------------- */
+@media (min-width:500px)
+{
+
+    .top-black img,
+    .bottom-gray img
+    {
+        left: 45%;
+    }
+}
+
+@media (min-width:800px)
+{
+    .grid-container
+    {
+        grid-template-columns: 1fr 1fr;
+        margin: 4rem 3rem;
+    }
+
+    .modal
+    {
+        left: 20%;
+        right: 20%;
+    }
+
+    .top-black img
+    {
+        width: 5rem;
+        height: 5rem;
+        top: 1%;
+        left: 47%;
+    }
+
+    .bottom-gray
+    {
+        height: 4rem;
+    }
+
+    .bottom-gray img
+    {
+        left: 47%;
+        bottom: 4%;
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media (min-width:1280px)
+{
+
+    .top-black img
+    {
+        left: 48%;
+    }
+
+    .bottom-gray img
+    {
+        right: 0;
+        left: 94%;
+        bottom: 8%;
+        width: 4.5rem;
+        height: 4.5rem;
+        z-index: 1;
+    }
+
+    .grid-container
+    {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .modal
+    {
+        left: 30%;
+        right: 30%;
+    }
+
+    .grid-item
+    {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .page-list
+    {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width:1500px)
+{
+    .grid-container
+    {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

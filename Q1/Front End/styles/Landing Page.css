@@ -1,0 +1,76 @@
+@import url("./import.css");
+
+body
+{
+    background: linear-gradient(180deg, rgba(229, 0, 0, 0.71) 9.02%, rgba(221, 6, 7, 0.72) 11.25%, #1593AF 68.67%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+    height: 98vh;
+}
+
+/* -----------------CONTAINER SECTION----------------- */
+.container
+{
+    background-color: var(--black);
+    color: #C1CC41;
+    font-weight: 500;
+    height: 70%;
+    margin: 0 1.5rem;
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.container h1
+{
+    font-family: 'Nunito', sans-serif;
+    color: azure;
+    font-size: 30px;
+}
+
+.container button
+{
+    background-color: var(--blue);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.container button a
+{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.container button a:visited
+{
+    text-decoration: none;
+}
+
+/* -----------------BREAKPOINT SECTION----------------- */
+@media (min-width:700px)
+{
+    .container
+    {
+        margin: 3rem 5rem;
+        border-radius: 25px;
+    }
+}
+
+@media (min-width:1280px)
+{
+    .container
+    {
+        margin: 4rem 10rem;
+    }
+}
